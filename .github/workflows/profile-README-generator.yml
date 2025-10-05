@@ -1,0 +1,46 @@
+name: Actualizar README automático
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"  # Se actualiza cada 12 horas
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    name: Generar estadísticas dinámicas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v3
+
+      - name: Actualizar estadísticas de GitHub
+        uses: anuraghazra/github-readme-stats@master
+        with:
+          username: Betoluchenco
+          show_icons: true
+          include_all_commits: true
+          count_private: true
+          theme: tokyonight
+          hide_border: true
+
+      - name: Generar trofeos
+        uses: ryo-ma/github-profile-trophy@master
+        with:
+          username: Betoluchenco
+          theme: tokyonight
+          no-frame: true
+          row: 1
+          margin-w: 10
+
+      - name: Generar estadísticas de lenguajes
+        run: |
+          echo "Generando estadísticas de lenguajes..."
+          curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=Betoluchenco&layout=compact&theme=tokyonight&hide_border=true" > top-langs.svg
+
+      - name: Commit y push de actualización
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add .
+          git commit -m "Actualización automática del README"
+          git push
