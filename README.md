@@ -74,7 +74,7 @@ Combino creatividad y lógica para convertir ideas en proyectos funcionales y at
 
 ### 📫 Contacto  
 <p align="center">
-  <a href="mailto:betoluchenco@gmail.com"><img src="https://img.shields.io/badge/Email-betoluchenco@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="mailto:albertopechoencinas@hotmail.com"><img src="https://img.shields.io/badge/Email-betoluchenco@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white"></a>
   <a href="https://www.linkedin.com/in/betoluchenco"><img src="https://img.shields.io/badge/LinkedIn-Perfil-blue?style=for-the-badge&logo=linkedin"></a>
 </p>
 
