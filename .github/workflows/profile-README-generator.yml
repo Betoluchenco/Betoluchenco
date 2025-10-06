@@ -14,23 +14,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Actualizar estadísticas de GitHub
-        uses: anuraghazra/github-readme-stats@master
-        with:
-          username: Betoluchenco
-          show_icons: true
-          include_all_commits: true
-          count_private: true
-          theme: tokyonight
-          hide_border: true
+        run: |
+          echo "Descargando estadísticas..."
+          curl -s "https://github-readme-stats.vercel.app/api?username=Betoluchenco&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true" > stats.svg
 
       - name: Generar trofeos
-        uses: ryo-ma/github-profile-trophy@master
-        with:
-          username: Betoluchenco
-          theme: tokyonight
-          no-frame: true
-          row: 1
-          margin-w: 10
+        run: |
+          echo "Descargando trofeos..."
+          curl -s "https://github-profile-trophy.vercel.app/?username=Betoluchenco&theme=tokyonight&no-frame=true&row=1&margin-w=10" > trophies.svg
 
       - name: Generar estadísticas de lenguajes
         run: |
@@ -42,5 +33,5 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add .
-          git commit -m "Actualización automática del README"
+          git commit -m "Actualización automática del README" || echo "Sin cambios"
           git push
